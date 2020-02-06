@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpserviceService } from "../service/httpservice.service";
 import {Observable} from 'rxjs';
+import * as XLSX from 'xlsx';  
 
 @Component({
   selector: 'app-employee-list',
@@ -10,10 +11,13 @@ import {Observable} from 'rxjs';
 })
 export class EmployeeListComponent implements OnInit {
   employeeLists : any;
+  fileUploaded: File;
+  storeData : any;
+  worksheet : any;
   constructor(private httpservice : HttpserviceService, private route : Router) { }
 
   ngOnInit() {
-    this.getEmployeeList();
+    //this.getEmployeeList();
   }
 
   getEmployeeList() {
@@ -27,5 +31,8 @@ export class EmployeeListComponent implements OnInit {
    // this.route.navigate(['/employee-detail'], { queryParams: { id: id } });
    this.route.navigate(['/employee-detail/'+id]);
   }
+
+
+
 
 }

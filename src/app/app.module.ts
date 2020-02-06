@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { ExcelService } from './service/excel.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
